@@ -78,6 +78,37 @@ def generate_observation_geojson(id_observation):
     return features
 
 
+def get_municipality_id_from_wkb_point(db, wkb):
+    """Return municipality id from wkb geometry     
+
+    :param db: db
+    :param wkb: WKB geometry
+    :type wkb: str
+
+    :return: municipality id
+    :rtype: int
+    """
+    try:
+        query = (
+            db.session.query(LAreas)
+            .filter(LAreas.geom.ST_Intersects(wkb), LAreas.id_type == 101)
+            .limit(1)
+        )
+        municipality_id = query[0]
+        current_app.logger.debug(
+            "[get_municipality_id_from_wkb_point] municipality id is {}".format(
+                municipality_id
+            )
+        )
+    except Exception as e:
+        current_app.logger.debug(
+            "[get_municipality_id_from_wkb_point] Can't get municipality id: {}".format(
+                str(e)
+            )
+        )
+    return municipality_id
+
+
 @routes.route("/observations/<int:pk>")
 @json_resp
 def get_observation(pk):
@@ -126,51 +157,43 @@ def post_observation():
         #   - bearerAuth: []
         summary: Creates a new observation (JWT auth optional, if used, obs_txt replaced by username)
         consumes:
-          - application/json
           - multipart/form-data
         produces:
           - application/json
         parameters:
-          - name: json
-            in: body
-            description: JSON parameters.
+          - name: id_program
             required: true
-            schema:
-              id: observation
-              required:
-                - cd_nom
-                - date
-                - geom
-              properties:
-                id_program:
-                  type: string
-                  description: Program unique id
-                  example: 1
-                  default: 1
-                cd_nom:
-                  type: string
-                  description: CD_Nom Taxref
-                  example: 3582
-                obs_txt:
-                  type: string
-                  default:  none
-                  description: User name
-                  required: false
-                  example: Martin Dupont
-                count:
-                  type: integer
-                  description: Number of individuals
-                  default:  none
-                  example: 1
-                date:
-                  type: string
-                  description: Date
-                  required: false
-                  example: "2018-09-20"
-                geometry:
-                  type: string
-                  description: Geometry (GeoJson format)
-                  example: {"type":"Point", "coordinates":[5,45]}
+            type: integer
+            description: Program unique id
+            example: 1
+            default: 1
+          - name: cd_nom
+            required: true
+            type: integer
+            description: CD_Nom Taxref
+            example: 3582
+          - name: obs_txt
+            required: false
+            type: string
+            default:  none
+            description: User name
+            example: Martin Dupont
+          - name: count
+            required: false
+            type: integer
+            description: Number of individuals
+            default:  1
+          - name: date
+            required: true
+            type: string
+            description: Date
+            required: false
+            example: "2018-09-20"
+          - name: geometry
+            required: true
+            type: string
+            description: Geometry (GeoJson format)
+            example: '{"type":"Point", "coordinates":[5,45]}'
         responses:
           200:
             description: Adding a observation
@@ -178,7 +201,8 @@ def post_observation():
     try:
         request_datas = request.form
         current_app.logger.debug(
-            '[post_observation] request data:', request_datas)
+            "[post_observation] request data:", request_datas
+        )
 
         datas2db = {}
         for field in request_datas:
@@ -192,20 +216,8 @@ def post_observation():
                 current_app.logger.debug("request.files: %s", request.files)
                 file = request.files.get("file", None)
                 current_app.logger.debug(
-                    "[post_observation] request.files: %s", request.files)
-                # if file and allowed_file(file.filename):
-                #     ext = file.filename.rsplit(".", 1)[1].lower()
-                #     timestamp = datetime.now().strftime(
-                #         "%Y%m%d_%H%M%S"
-                #     )
-                #     filename = (
-                #         "obstax_" + datas2db["cd_nom"] + "_" + timestamp + ext
-                #     )
-                #     path = MEDIA_DIR / filename
-                #     file.save(str(path))
-                #     current_app.logger.debug("path: %s", path)
-                #     # datas2db["photo"] = filename
-                # save_upload_files(request.files)
+                    "[post_observation] request.files: %s", request.files
+                )
 
         except Exception as e:
             current_app.logger.debug("[post_observation] file ", e)
@@ -219,7 +231,6 @@ def post_observation():
         except Exception as e:
             current_app.logger.debug(e)
             raise GeonatureApiError(e)
-
         try:
             shape = asShape(json.loads(request_datas["geometry"]))
             newobs.geom = from_shape(Point(shape), srid=4326)
@@ -239,6 +250,11 @@ def post_observation():
                 newobs.obs_txt = "Anonyme"
 
         newobs.uuid_sinp = uuid.uuid4()
+
+        # Get municipality id
+        newobs.municipality = get_municipality_id_from_wkb_point(
+            db, newobs.geom
+        )
 
         db.session.add(newobs)
         db.session.commit()
@@ -404,7 +420,7 @@ def get_program_observations(id):
         observations = (
             db.session.query(
                 ObservationModel,
-                (LAreas.area_name + " (" + LAreas.area_code + ")").label(
+                (LAreas.area_name + " (" + LAreas.area_code[:2] + ")").label(
                     "municipality"
                 ),
             )
