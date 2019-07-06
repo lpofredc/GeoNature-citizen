@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, OnInit, Input} from "@angular/core";
 import { Observable, Subject, throwError } from "rxjs";
 import { tap, map, catchError } from "rxjs/operators";
 
@@ -30,6 +30,9 @@ export class TopbarComponent implements OnInit {
   isAdmin = false;
   canDisplayAbout: boolean = AppConfig.about;
   adminUrl: SafeUrl;
+
+  @Input()
+  displayTopbar: boolean;
 
   constructor(
     private route: ActivatedRoute,

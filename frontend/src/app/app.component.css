@@ -1,9 +1,15 @@
-.router-app {
-  margin-top: var(--router-outlet-margin-top);
+.app-with-topbar {
+    margin-top: 106px;
+}
+
+@media screen and (max-width: 991px) {
+    .app-no-topbar {
+        margin-top: 65px !important;
+    }
 }
 
 @media screen and (max-width: 576px) {
-  .router-app {
-    margin-top: 65px !important;
-  }
+    .app-with-topbar {
+        margin-top: 65px !important;
+    }
 }
