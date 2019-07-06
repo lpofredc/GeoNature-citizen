@@ -130,7 +130,7 @@ export class GncProgramsService implements OnInit {
     return this.http
       .get<FeatureCollection>(`${this.URL}/sites/programs/${id}`)
       .pipe(
-        take(1),
+        //take(1),
         catchError(
           this.handleError<FeatureCollection>(`getProgramObservations id=${id}`)
         )
@@ -141,7 +141,7 @@ export class GncProgramsService implements OnInit {
     return this.http
       .get<FeatureCollection>(`${this.URL}/sites/${id}`)
       .pipe(
-        take(1),
+        //take(1),
         catchError(
           this.handleError<FeatureCollection>(`getProgramObservations id=${id}`)
         )
