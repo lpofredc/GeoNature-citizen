@@ -345,10 +345,6 @@
           <context context-type="linenumber">61</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/auth/register/register.component.html</context>
-          <context context-type="linenumber">103</context>
-        </context-group>
-        <context-group purpose="location">
           <context context-type="sourcefile">app/auth/user-dashboard/user-dashboard.component.html</context>
           <context context-type="linenumber">137</context>
         </context-group>
@@ -449,11 +445,18 @@
           <context context-type="linenumber">93</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="b0019510b8ec3393ffa80d236ceacb8281d1fb15" datatype="html">
+      <trans-unit id="registerMunicipalityPlaceholder" datatype="html">
         <source>Votre commune</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/register/register.component.html</context>
           <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bcfe8b22ad44df641c4406971651315da1bddef2" datatype="html">
+        <source>Entrez votre commune</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/register/register.component.html</context>
+          <context context-type="linenumber">103</context>
         </context-group>
       </trans-unit>
       <trans-unit id="963816961c6d1a067196dac298708b1ff379057f" datatype="html">

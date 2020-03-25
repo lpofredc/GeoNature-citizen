@@ -98,9 +98,9 @@
     <div class="form-row">
       <div class="col-12">
         <div class="form-group">
-          <label for="fmunicipality" i18n>Votre commune</label>
+          <label for="fmunicipality" i18n="@@registerMunicipalityLabel">Votre commune</label>
           <input type="text" class="form-control rounded-0" id="fmunicipality" name="fmunicipality" 
-          i18n-placeholder placeholder="Entrez votre prénom" [(ngModel)]="user.municipality" #fname="ngModel" autocomplete="fmunicipality" />
+          i18n-placeholder="@@registerMunicipalityPlaceholder" placeholder="Entrez votre commune" [(ngModel)]="user.municipality" #fname="ngModel" autocomplete="fmunicipality" />
         </div>
       </div>
     </div>

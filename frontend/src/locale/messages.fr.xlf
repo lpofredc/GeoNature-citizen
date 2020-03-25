@@ -442,12 +442,20 @@
           <context context-type="linenumber">210</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="b0019510b8ec3393ffa80d236ceacb8281d1fb15" datatype="html">
+      <trans-unit id="registerMunicipalityLabel" datatype="html">
         <source>Votre commune</source>
         <target>Votre commune</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/register/register.component.html</context>
           <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registerMunicipalityPlaceholder" datatype="html">
+        <source>Entrez votre commune</source>
+        <target>Entrez votre commune</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/register/register.component.html</context>
+          <context context-type="linenumber">103</context>
         </context-group>
       </trans-unit>
       <trans-unit id="963816961c6d1a067196dac298708b1ff379057f" datatype="html">
