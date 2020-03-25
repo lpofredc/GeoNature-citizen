@@ -46,6 +46,7 @@ class UserModel(TimestampMixinModel, db.Model):
     email = db.Column(db.String(150), unique=True, nullable=False)
     phone = db.Column(db.String(15))
     organism = db.Column(db.String(100))
+    municipality = db.Column(db.String(200))
     avatar = db.Column(db.String())
     active = db.Column(db.Boolean, default=False)
     admin = db.Column(db.Boolean, default=False)
