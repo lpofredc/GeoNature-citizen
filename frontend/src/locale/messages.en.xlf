@@ -435,11 +435,19 @@
         <target>Please, confirm your password</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/register/register.component.html</context>
-          <context context-type="linenumber">167</context>
+          <context context-type="linenumber">92</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/user-dashboard/user-dashboard.component.html</context>
-          <context context-type="linenumber">210</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b0019510b8ec3393ffa80d236ceacb8281d1fb15" datatype="html">
+        <source>Votre commune</source>
+        <target>Your municipality</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/register/register.component.html</context>
+          <context context-type="linenumber">101</context>
         </context-group>
       </trans-unit>
       <trans-unit id="963816961c6d1a067196dac298708b1ff379057f" datatype="html">
@@ -451,7 +459,7 @@
 .        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/register/register.component.html</context>
-          <context context-type="linenumber">175</context>
+          <context context-type="linenumber">109</context>
         </context-group>
       </trans-unit>
       <trans-unit id="152a0d336ac1e704ef12fa2b8e44fcc8c634d084" datatype="html">
@@ -459,7 +467,7 @@
         <target>conditions d&apos;utilisation</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/register/register.component.html</context>
-          <context context-type="linenumber">189</context>
+          <context context-type="linenumber">114</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a07d84725ccca87d9af1ca9831ab500368066d45" datatype="html">
@@ -471,7 +479,7 @@
     </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/register/register.component.html</context>
-          <context context-type="linenumber">200</context>
+          <context context-type="linenumber">117</context>
         </context-group>
       </trans-unit>
       <trans-unit id="34ce76a79350dc319bac73eb7bcd8b0c6019a70d" datatype="html">
@@ -483,11 +491,11 @@
   </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/register/register.component.html</context>
-          <context context-type="linenumber">211</context>
+          <context context-type="linenumber">123</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/login/login.component.html</context>
-          <context context-type="linenumber">174</context>
+          <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8340ba5b505cf54e552cd818f85744866990f31e" datatype="html">
@@ -1411,6 +1419,18 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/login/login.component.html</context>
           <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="65ee3c70883b2644b4e3665eb3a578313e7d96dd" datatype="html">
+        <source>
+        Veuillez accepter les conditions d&apos;utilisation.
+      </source>
+        <target>
+          Please accept the conditions of utilization.
+.        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">111</context>
         </context-group>
       </trans-unit>
     </body>

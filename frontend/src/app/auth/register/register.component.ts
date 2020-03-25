@@ -43,7 +43,7 @@ export class RegisterComponent {
               this.successMessage = null;
               this.activeModal.close();
             });
-
+            
             this.displaySuccessMessage(message);
             // redirect ?
             if (this.auth.redirectUrl) {
