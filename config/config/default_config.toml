@@ -1,0 +1,73 @@
+# Database
+SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://gnc_demo:Fiengai!piar4ahc@163.172.195.17:5434/gnc_obs_demo"
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+
+# JWT Auth
+JWT_SECRET_KEY = 'ohf(o4giec?a9iud9unee7noh}v3eig4eeVohch3gegh3oochix4ah'
+JWT_BLACKLIST_ENABLED = true
+JWT_BLACKLIST_TOKEN_CHECKS = ['access', 'refresh']
+
+# Application
+appName = 'GeoNature-citizen' # Application name in the home page
+DEFAULT_LANGUAGE = 'fr'
+
+# Debug
+DEBUG = true
+SQLALCHEMY_DEBUG_LEVEL = 'WARNING'
+
+URL_APPLICATION = 'http://localhost:4200'        # Replace my_url.com by your domain or IP
+API_ENDPOINT = 'http://localhost:5002/api'        # Replace my_url.com by your domain or IP
+API_PORT = 5002 # 5000 déjà utilisé par taxhub
+API_TAXHUB ='https://geonature.fauneauvergnerhonealpes.org/taxhub/api/'
+
+# FlaskAdmin
+# credentials for loading map tiles from mapbox
+MAPBOX_MAP_ID = '...'
+MAPBOX_ACCESS_TOKEN = '...'
+DEFAULT_CENTER_LAT = 45
+DEFAULT_CENTER_LONG = 5
+
+
+SECRET_KEY = 'naisao"w7teiqu7Neinai9ceenohTibieg3fais4Eph3eeviefu"Ma'
+CONFIRM_MAIL_SALT = 'your-secret-salt'
+
+MEDIA_FOLDER = 'media'
+
+[RESET_PASSWD]
+    SUBJECT = "Link"
+    FROM = 'fcloitre@dbwildlife.info'
+    TEXT_TEMPLATE = '''
+    Bonjour,\r\nVoici votre nouveau mot de passe :\r\n{passwd}\r\n"{app_url}
+    '''
+    HTML_TEMPLATE = '''
+    Bonjour,<br /><br />Voici votre nouveau mot de passe :<br />
+    {passwd}
+    <br /><br />"
+    <a href="{app_url}">Connexion</a>'
+    '''
+
+[CONFIRM_EMAIL]
+    SUBJECT = "Activez votre compte"
+    FROM = 'frederic.cloitre@lpo.fr'
+    HTML_TEMPLATE = '''<p> Bonjour,</p><br /><p>Nous vous confirmons que votre compte a bien été créé.</p>
+     <p> Afin d'activer votre compte veuillez <a href="{activate_url}">cliquer ici.</a>
+     <p>Nous vous souhaitons la bienvenue sur notre site.</p><br />
+     <p>Bien à vous.</p>
+    '''
+
+
+[MAIL]
+    MAIL_USE_SSL = false
+    MAIL_HOST = 'smtp.office365.com'
+    MAIL_PORT = 587   # mandatory SSL port
+    MAIL_AUTH_LOGIN = 'frederic.cloitre@lpo.fr'
+    MAIL_AUTH_PASSWD = 'bo_vae4s'
+    MAIL_STARTTLS = true
+
+
+# API flasgger main config
+[SWAGGER]
+    title = 'GeoNature-Citizen de Meylan API'
+    version = '0.3.0'
+    produces = ["application/json"]
+    consumes = ["application/json"]

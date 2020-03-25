@@ -1,0 +1,20 @@
+diff --git a/node_modules/@types/leaflet/index.d.ts b/node_modules/@types/leaflet/index.d.ts
+index 0e8f346..63da24c 100644
+--- a/node_modules/@types/leaflet/index.d.ts
++++ b/node_modules/@types/leaflet/index.d.ts
+@@ -500,6 +500,7 @@ export interface TileLayerOptions extends GridLayerOptions {
+     detectRetina?: boolean;
+     crossOrigin?: CrossOrigin;
+     // [name: string]: any;
++    [name: string]: any;
+     // You are able add additional properties, but it makes this interface unchackable.
+     // See: https://github.com/DefinitelyTyped/DefinitelyTyped/issues/15313
+     // Example:
+@@ -1064,6 +1065,7 @@ export interface MapOptions {
+     tapTolerance?: number;
+     touchZoom?: Zoom;
+     bounceAtZoomLimits?: boolean;
++    gestureHandling?: boolean;
+ }
+ 
+ export type ControlPosition = 'topleft' | 'topright' | 'bottomleft' | 'bottomright';
