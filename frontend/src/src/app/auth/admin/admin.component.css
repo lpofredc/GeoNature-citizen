@@ -1,5 +1,0 @@
-#admin {
-    height: calc(100vh - var(--router-outlet-offset));
-    width: 100%;
-    border: 1px solid grey;
-}
