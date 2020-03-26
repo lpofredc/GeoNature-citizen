@@ -1170,12 +1170,12 @@
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="9a7c8e4a5ee4f7a6da459429b9dcbf58604bc93f" datatype="html">
+      <trans-unit id="userDashboardDeleteAccountLink" datatype="html">
         <source>
-          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Supprimer mon compte
+          Supprimer mon compte
         </source>
         <target>
-          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Delete my account
+          Delete my account
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/user-dashboard/user-dashboard.component.html</context>
