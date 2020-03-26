@@ -1156,7 +1156,7 @@
       </trans-unit>
       <trans-unit id="9a7c8e4a5ee4f7a6da459429b9dcbf58604bc93f" datatype="html">
         <source>
-          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Supprimer mes données personnelles
+          <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Supprimer mon compte
         </source>
         <target>
           <x id="START_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;i&gt;"/><x id="CLOSE_ITALIC_TEXT" ctype="x-i" equiv-text="&lt;/i&gt;"/>Delete my account
