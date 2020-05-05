@@ -33,6 +33,7 @@ app-home .section:before {
     position: relative;
     height: calc(100vh - var(--router-outlet-margin-top));
     margin-top: var(--router-outlet-margin-top);
+    padding: 20px;
 }
 
 #welcome:before {
@@ -315,8 +316,9 @@ app-observations {
         padding: 0px 5% !important;
     }
     #welcome p {
-        display: none;
+        padding: 0px 5% !important;
     }
+
     #welcome a:first-child {
         padding: 10px 20px;
         right: 50% !important;
@@ -358,6 +360,10 @@ app-observations {
         height: inherit;
         min-height: 280px;
         max-height: 280px;
+        padding: 10px;
+    }
+    #welcome p {
+        display: none;
     }
     #welcome h1{
         position: absolute;
@@ -671,6 +677,7 @@ app-observations {
     #welcome{
         margin-top: 66px !important;
         height: calc(100vh - 66px) !important;
+        padding: 10px;
     }
     .text-center h5.card-title {
         min-height: inherit;
